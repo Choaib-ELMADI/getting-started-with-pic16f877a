@@ -1,11 +1,11 @@
 1. GPIOs:
     => GPIOs (General Purpose Input Output) are used to interface input and output devices with a microcontroller.
     => PIC16F877A has 5 different GPIO ports:
-        > PORTA
-        > PORTB
-        > PORTC
-        > PORTD
-        > PORTE
+        > PORTA: 6 pins : RA0 -> RA5
+        > PORTB: 8 pins : RB0 -> RB7
+        > PORTC: 8 pins : RC0 -> RC7
+        > PORTD: 8 pins : RD0 -> RD7
+        > PORTE: 3 pins : RE0 -> RE2
 
 2. Timers:
     => PIC16F877A has 3 timers:
