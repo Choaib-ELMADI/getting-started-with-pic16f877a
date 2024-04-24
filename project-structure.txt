@@ -1,0 +1,24 @@
+The programs I'm working with are:
+
+1. MPLAB X IDE with XC8 Compiler:
+    => Create, Compile, Run and Debug programs.
+    => To create a program, follow these steps:
+        * Create a project with all its configuration (Project Type, uC Family, uC Type, Compiler, Project Name, ...)
+        * Add program file to the project
+        * Write the program code
+        * Build and Debug the code
+        * Save the program files
+
+2. Proteus 8:
+    => Simulate the programs inputs and outputs.
+    => To create a simulation, follow these steps:
+        * Create a Schematic Capture
+        * Select Components Mode
+        * Click P -> Search for components
+        * Add the components to the canvas
+        * Add other essential things (GND, ...)
+        * Double click the microcontroller
+        * Configure the processor clock frequency
+        * Add the program file:
+            => MPLABXProjects\\YourProject.X\\dist\\default\\production\\YourProject.X.production.hex
+        * Start the simulation
