@@ -1,0 +1,12 @@
+1. Watchdog Timer:
+    => A Watchdog Timer is a hardware timer that automatically generates a system reset if the main program neglects to periodically service(reset) it.
+    => The Watchdog Timer is clocked from a separate on-chip oscillator which runs at 1MHz.
+    => RC oscillator handles the watchdog timer.
+    => It's often used to automatically reset an Arduino that hangs because of a software or a hardware fault.
+
+2. Power Down Modes:
+    => 
+
+3. Brownout Reset:
+
+4. Power-on Reset:
