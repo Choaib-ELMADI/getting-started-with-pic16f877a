@@ -5,8 +5,18 @@
     => It's often used to automatically reset an Arduino that hangs because of a software or a hardware fault.
 
 2. Power Down Modes:
-    => 
+    => There are 3 categories of power management modes:
+        > Run Mode: clocks for both core and peripherals are active [Active Mode/State].
+        > Idle Mode: allow the controller's CPU to be selectively shut down while the peripherals continue to operate [Hibernate Mode].
+        > Sleep Mode: lowest current consumption state.
 
 3. Brownout Reset:
+    => A Brownout of a microcontroller is a partial and temporary reduction in the power supply voltage, below the level required for reliable operation.
+    => Many microcontrollers have a protection circuit which detects when the voltage goes below this level and puts the device into a reset state.
+    => This action is called a "Brownout Reset" or BOR.
 
 4. Power-on Reset:
+    => A power-on Reset circuit is responsible for generating resetting signals whenever power is supplied to a given electrical device.
+    => MCLR (Master Clear Reset):
+        > MCLR = 0 ===> reset and terminate all activities
+        > MCLR = 1 ===> start normal execution
