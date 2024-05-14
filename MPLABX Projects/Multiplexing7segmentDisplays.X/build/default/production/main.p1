@@ -205,31 +205,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "7 main.c
-[; ;main.c: 7:     while (1) {
+[; ;main.c: 7:     i = 56 % 10;
 [p x FOSC  =  HS ]
 "8
-[; ;main.c: 8:         PORTCbits.RC0 = 0;
+[; ;main.c: 8:     j = 56 / 10;
 [p x WDTE  =  OFF ]
 "9
-[; ;main.c: 9:         PORTCbits.RC1 = 1;
+[; ;main.c: 9: 
 [p x PWRTE  =  OFF ]
 "10
-[; ;main.c: 10:         PORTB = numbers[4];
+[; ;main.c: 10:     while (1) {
 [p x BOREN  =  OFF ]
 "11
-[; ;main.c: 11:         _delay((unsigned long)((10)*(20000000/4000.0)));
+[; ;main.c: 11:         PORTCbits.RC0 = 0;
 [p x LVP  =  ON ]
 "12
-[; ;main.c: 12:         PORTCbits.RC0 = 1;
+[; ;main.c: 12:         PORTCbits.RC1 = 1;
 [p x CPD  =  OFF ]
 "13
-[; ;main.c: 13:         PORTCbits.RC1 = 0;
+[; ;main.c: 13:         PORTB = numbers[i];
 [p x WRT  =  OFF ]
 "14
-[; ;main.c: 14:         PORTB = numbers[2];
+[; ;main.c: 14:         _delay((unsigned long)((10)*(20000000/4000.0)));
 [p x CP  =  OFF ]
 "16
-[; ;main.c: 16:     }
+[; ;main.c: 16:         PORTCbits.RC1 = 0;
 [v _numbers `uc ~T0 @X0 -> 10 `i e ]
 [i _numbers
 :U ..
@@ -246,48 +246,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "17
-[; ;main.c: 17: 
-[v _i `i ~T0 @X0 1 e ]
-[i _i
--> 0 `i
+[; ;main.c: 17:         PORTB = numbers[j];
+[v _num `i ~T0 @X0 1 e ]
+[i _num
+-> 56 `i
 ]
+"18
+[; ;main.c: 18:         _delay((unsigned long)((10)*(20000000/4000.0)));
+[v _i `i ~T0 @X0 1 e ]
+[v _j `i ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"19
-[; ;main.c: 19: }
+"20
+[; ;main.c: 20: 
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"20
-[e = _TRISC -> -> 0 `i `uc ]
 "21
+[; ;main.c: 21:     return;
+[e = _TRISC -> -> 0 `i `uc ]
+"22
+[; ;main.c: 22: }
 [e = _TRISB -> -> 0 `i `uc ]
 "23
+[e = _i % -> 56 `i -> 10 `i ]
+"24
+[e = _j / -> 56 `i -> 10 `i ]
+"26
 [e :U 101 ]
 {
-"24
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-"25
-[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"26
-[e = _PORTB *U + &U _numbers * -> -> -> 4 `i `ui `ux -> -> # *U &U _numbers `ui `ux ]
 "27
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
 "28
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 "29
-[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+[e = _PORTB *U + &U _numbers * -> -> _i `ui `ux -> -> # *U &U _numbers `ui `ux ]
 "30
-[e = _PORTB *U + &U _numbers * -> -> -> 2 `i `ui `ux -> -> # *U &U _numbers `ui `ux ]
-"31
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"31
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
 "32
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+"33
+[e = _PORTB *U + &U _numbers * -> -> _j `ui `ux -> -> # *U &U _numbers `ui `ux ]
+"34
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"35
 }
 [e :U 100 ]
 [e $U 101  ]
 [e :U 102 ]
-"34
+"37
 [e $UE 99  ]
-"35
+"38
 [e :UE 99 ]
 }
