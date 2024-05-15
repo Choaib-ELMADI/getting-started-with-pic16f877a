@@ -14,7 +14,7 @@
         * VSS (Ground)
         * VDD (5V)
         * VE  (Contrast of display)
-        * RS  (Register Select, 0 ==> DR | 1 ==> IR)
+        * RS  (Register Select, 0 ==> IR | 1 ==> DR)
         * RW  (Read/Write, 0 ==> write to LCD | 1 ==> read from LCD)
         * E   (Enable)
         * D0 --
