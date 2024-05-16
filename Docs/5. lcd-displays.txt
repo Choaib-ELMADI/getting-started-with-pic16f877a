@@ -27,3 +27,93 @@
         * D7 --
         * Backlight Anode
         * Backlight Cathode
+
+3. 16X2 LCD Display (8bit mode):
+    => Consider this:
+        void lcd_data(unsigned char data) {
+            EN = 1;     // Enabled
+            RS = 1;     // Data Register
+            RW = 0;     // Write
+            PORTD = data;
+            __delay_ms(5);
+            EN = 0;     // Disabled
+        }
+
+        void lcd_command(unsigned char cmd) {
+            EN = 1;     // Enabled
+            RS = 0;     // Instruction Register
+            RW = 0;     // Write
+            PORTD = cmd;
+            __delay_ms(5);
+            EN = 0;     // Disabled
+        }
+    
+    => Example:
+        lcd_data("a");
+        "a" in hexadecimal is 0x61 and in binary is 0b01100001
+                        _________________________________
+        Actual DATA =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 1 |
+                        ---------------------------------
+
+                        D7   D6   D5  D4  D3  D2  D1  D0
+                        _________________________________
+        DATA Lines  =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 1 |
+                        ---------------------------------
+
+4. 16X2 LCD Display (4bit mode):
+    => Consider this:
+        void lcd_data(unsigned char data) {
+            EN = 1;     // Enabled
+            RS = 1;     // Data Register
+            RW = 0;     // Write
+            PORTD = (data & 0xF0);
+            __delay_ms(2);
+            EN = 0;     // Disabled
+            PORTD = ((data << 4) & 0xF0);
+            EN = 1;
+            RS = 1;
+            RW = 0;
+            __delay_ms(2);
+            EN = 0;
+        }
+
+        void lcd_command(unsigned char cmd) {
+            EN = 1;     // Enabled
+            RS = 0;     // Instruction Register
+            RW = 0;     // Write
+            PORTD = (cmd & 0xF0);
+            __delay_ms(2);
+            EN = 0;     // Disabled
+            PORTD = ((cmd << 4) & 0xF0);
+            EN = 1;
+            RS = 0;
+            RW = 0;
+            __delay_ms(2);
+            EN = 0;
+        }
+
+    => In 4bit mode, only the 4 MSB are in use.
+    
+    => Example:
+        lcd_data("a");
+        "a" in hexadecimal is 0x61 and in binary is 0b01100001
+                        _________________________________
+        Actual DATA =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 1 |
+                        ---------------------------------
+
+                        _________________________________
+        0xF0        =>  | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+                        ---------------------------------
+
+                        _________________________________
+        DATA & 0xF0 =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+                        ---------------------------------
+
+                        D7   D6   D5  D4  D3  D2  D1  D0
+                        _________________________________
+        DATA Lines  =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+                        ---------------------------------
+
+                        _________________________________
+        (DATA << 4) =>  | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
+                        ---------------------------------
