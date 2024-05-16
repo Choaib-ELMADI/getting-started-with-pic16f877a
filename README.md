@@ -1,4 +1,4 @@
-[![Choaib ELMADI - PIC16F877A](https://img.shields.io/badge/Choaib_ELMADI-PIC16F877A-6d2eee)](https://elmadichoaib.vercel.app) ![Status - Building](https://img.shields.io/badge/Status-Building-green) [![Credit - SM training academy](https://img.shields.io/badge/Credit-SM_training_academy-blue)](https://www.youtube.com/@SMtrainingacademy)
+[![Choaib ELMADI - PIC16F877A](https://img.shields.io/badge/Choaib_ELMADI-PIC16F877A-8800dd)](https://elmadichoaib.vercel.app) ![Status - Building](https://img.shields.io/badge/Status-Building-2bd729) [![Credit - SM training academy](https://img.shields.io/badge/Credit-SM_training_academy-3b8af2)](https://www.youtube.com/@SMtrainingacademy)
 
 # Getting Started with PIC16F877A
 
@@ -9,11 +9,8 @@ Welcome to the **Getting Started with PIC16F877A** repository! This repository i
 The repository is structured as follows:
 
 - **Docs**: This folder contains multiple text files and images to explain various concepts related to the PIC16F877A microcontroller.
-  
 - **MPLAB Projects**: Here, you'll find PIC16F877A projects written in assembly language for use with MPLAB IDE.
-  
 - **MPLABX Projects**: This folder contains PIC16F877A projects written in C language for use with MPLAB X IDE and Micro C compiler.
-  
 - **Proteus 8**: Here, you'll find simulations of the projects created in MPLAB and MPLABX.
 
 ![Note](https://img.shields.io/badge/NOTE:-fb151a)
