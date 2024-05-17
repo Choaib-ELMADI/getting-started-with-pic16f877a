@@ -1,0 +1,37 @@
+### HEXMate logfile and output summary ###
+
+### Command-line arguments ###
+ C:\Users\CHOAIB~1\AppData\Local\Temp\xcBsiu0.1\driver_tmp_3.o
+ -Odist/default/production\TimerInterrupt.X.production.hex
+ -logfile=dist/default/production\TimerInterrupt.X.production.hxl
+ -addressing=2
+
+### Memory Usage ###
+ Input file ranges:
+  0h - 5h		(C:\Users\CHOAIB~1\AppData\Local\Temp\xcBsiu0.1\driver_tmp_3.o)
+  8h - AFh		(C:\Users\CHOAIB~1\AppData\Local\Temp\xcBsiu0.1\driver_tmp_3.o)
+  400Eh - 400Fh		(C:\Users\CHOAIB~1\AppData\Local\Temp\xcBsiu0.1\driver_tmp_3.o)
+ Unused ranges:
+  6h - 7h
+  B0h - 400Dh
+
+### Hex Memory Map ###
+ Legend:
+  -- = Unused memory
+  H1 = Input file             (C:\Users\CHOAIB~1\AppData\Local\Temp\xcBsiu0.1\driver_tmp_3.o)
+----------------------------------------------------------
+         | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+----------------------------------------------------------
+00000000 | H1 H1 H1 H1 H1 H1 -- -- H1 H1 H1 H1 H1 H1 H1 H1
+00000010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000030 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000040 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000050 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000060 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000070 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000080 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000090 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000000A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+----------------------------------------------------------
+00004000 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1

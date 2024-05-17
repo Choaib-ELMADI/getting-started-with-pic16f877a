@@ -1,0 +1,26 @@
+1. What is a Timer?
+    => A timer is a peripheral of the microcontroller.
+    => A Timer is just a counter which counts time.
+    => There are 2 types of counts:
+        * UP Counting: counts from preprogramed value to max value.
+        * DOWN Counting: counts from preprogramed value to 0.
+
+2. Timers Applications:
+    => Time delay generation.
+    => Measuring frequency of pulses.
+    => Generating PWM signals.
+    => Triggering external devices or peripherals.
+
+3. Timer Delay Generation (TMR0):
+    => Set the timer prescalar in OPTION_REG.
+    --> Just a number that divides the timer clock frequency of the uC, which reduces the speed of the timer counter.
+    --> PIC16F877A has a fixed prescalar of 4, and a user defined prescalar.
+
+    => Calculate the load value (preprogramed value) for the required time.
+    --> Load Value = (255 - TMR0) * Prescalar * Machine Cycle
+    --> Machine Cycle = 4 / 20MHz = 200ns
+
+    => Update TMR0 register with the load value.
+
+4. Timer Interrupts:
+    => When the timer counter goes from max value (or from 0) to the preprogramed value, a timer overflow interrupt occurs.
