@@ -23,12 +23,12 @@ Projects in the **"MPLAB Projects"**, **"MPLABX Projects"**, and **"Proteus 8"**
 
 If you have a development board and a programmer:
 
-![With Development Board and Programmer](https://github.com/Choaib-ELMADI/getting-started-with-pic16f877a/blob/master/Docs/0.1%20upload-code__dev-board.png)
+![With Development Board and Programmer](./Docs/0.1%20upload-code__dev-board.png)
 
 ### Case 2: Only PIC with Programmer
 
 If you have only the PIC16F877A microcontroller and a programmer:
 
-![Only PIC with Programmer](https://github.com/Choaib-ELMADI/getting-started-with-pic16f877a/blob/master/Docs/0.2%20upload-code__microcontroller.png)
+![Only PIC with Programmer](./Docs/0.2%20upload-code__microcontroller.png)
 
 ## Feel free to explore each folder to access the resources and projects provided.
