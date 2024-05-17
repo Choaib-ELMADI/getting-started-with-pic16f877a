@@ -11,7 +11,7 @@
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-void interrupt external();
+void interrupt external(void);
 
 void main(void) {
     INTCONbits.GIE = 1;         // Global Interrupt Enable Bit
@@ -26,9 +26,9 @@ void main(void) {
     return;
 }
 
-void interrupt external() {
+void interrupt external(void) {
     if (INTCONbits.INTF == 1) {
         PORTDbits.RD0 = ~PORTDbits.RD0;
-        INTCONbits.INTF == 0;
+        INTCONbits.INTF = 0;
     }
 }

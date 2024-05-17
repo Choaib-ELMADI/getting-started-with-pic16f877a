@@ -1092,7 +1092,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "12
 [p x CP=OFF ]
-[; ;main.c: 14: void interrupt external();
+[; ;main.c: 14: void interrupt external(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
 "16
 [v _main `(v ~T0 @X0 1 ef ]
@@ -1131,11 +1131,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 95 ]
 }
 [v $root$_external `(v ~T0 @X0 0 e ]
-[v F880 `(v ~T0 @X0 1 tf ]
+[v F881 `(v ~T0 @X0 1 tf ]
 "29
-[v _external `IF880 ~T0 @X0 1 e ]
+[v _external `IF881 ~T0 @X0 1 e ]
 {
-[; ;main.c: 29: void interrupt external() {
+[; ;main.c: 29: void interrupt external(void) {
 [e :U _external ]
 [f ]
 [; ;main.c: 30: if (INTCONbits.INTF == 1) {
@@ -1145,9 +1145,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 31: PORTDbits.RD0 = ~PORTDbits.RD0;
 "31
 [e = . . _PORTDbits 0 0 -> ~ -> . . _PORTDbits 0 0 `i `uc ]
-[; ;main.c: 32: INTCONbits.INTF == 0;
+[; ;main.c: 32: INTCONbits.INTF = 0;
 "32
-[e == -> . . _INTCONbits 0 1 `i -> 0 `i ]
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "33
 }
 [e :U 100 ]

@@ -1799,7 +1799,7 @@ extern __bank0 __bit __timeout;
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-void interrupt external();
+void interrupt external(void);
 
 void main(void) {
 INTCONbits.GIE = 1;
@@ -1814,9 +1814,9 @@ while (1) {}
 return;
 }
 
-void interrupt external() {
+void interrupt external(void) {
 if (INTCONbits.INTF == 1) {
 PORTDbits.RD0 = ~PORTDbits.RD0;
-INTCONbits.INTF == 0;
+INTCONbits.INTF = 0;
 }
 }

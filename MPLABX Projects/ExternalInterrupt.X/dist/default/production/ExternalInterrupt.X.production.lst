@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.45 build 20230818022343 
-                                                                                               Fri May 17 12:51:47 2024
+                                                                                               Fri May 17 20:19:45 2024
 
 Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1 
      1                           	processor	16F877A
@@ -287,7 +287,7 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    273 ;; Return value:  Size  Location     Type
    274 ;;                  1    wreg      void 
    275 ;; Registers used:
-   276 ;;		wreg, status,0
+   276 ;;		status,0
    277 ;; Tracked objects:
    278 ;;		On entry : 0/0
    279 ;;		On exit  : 0/0
@@ -341,8 +341,8 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    327     0026                     u3_24:
    328     0026                     i1l620:
    329                           
-   330                           ;main.c: 32: INTCONbits.INTF == 0;
-   331     0026  080B               	movf	11,w	;volatile
+   330                           ;main.c: 32: INTCONbits.INTF = 0;
+   331     0026  108B               	bcf	11,1	;volatile
    332     0027                     i1l22:
    333     0027  0871               	movf	??_external+1,w
    334     0028  008A               	movwf	10
@@ -358,7 +358,7 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    344                           	psect	intentry
    345     0004                     __pintentry:	
    346                           ;incstack = 0
-   347                           ; Regs used in _external: [wreg+status,0]
+   347                           ; Regs used in _external: [status,0]
    348                           
    349     0004                     interrupt_function:
    350     007E                     saved_w	set	btemp
@@ -505,7 +505,7 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.45 build 20230818022343 
-Symbol Table                                                                                   Fri May 17 12:51:47 2024
+Symbol Table                                                                                   Fri May 17 20:19:45 2024
 
                      l13 0035                       l14 0035                      l614 002E  
                    i1l22 0027                     u1_20 0017                     u1_21 0016  
