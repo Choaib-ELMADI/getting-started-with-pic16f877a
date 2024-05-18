@@ -11,16 +11,39 @@
     => Generating PWM signals.
     => Triggering external devices or peripherals.
 
-3. Timer Delay Generation (TMR0):
-    => Set the timer prescalar in OPTION_REG.
+3. Timer Interrupts:
+    => When the timer counter goes from max value (or from 0) to the preprogramed value, a timer overflow interrupt occurs.
+
+4. Timer Delay Generation (TMR0):
+    >>-> TMR0 is a 8bit timer / counter module.
+
+    => Set the timer prescalar in OPTION_REG:
     --> Just a number that divides the timer clock frequency of the uC, which reduces the speed of the timer counter.
     --> PIC16F877A has a fixed prescalar of 4, and a user defined prescalar.
 
-    => Calculate the load value (preprogramed value) for the required time.
-    --> Load Value = (255 - TMR0) * Prescalar * Machine Cycle
-    --> Machine Cycle = 4 / 20MHz = 200ns
+    => Calculate the load value (preprogramed value) for the required time:
+    --> `Load Value` = (255 - TMR0) * prescalar * `Machine Cycle`
+    --> `Machine Cycle` = 4 / 20MHz = 200ns
 
-    => Update TMR0 register with the load value.
+    => Update TMR0 register.
 
-4. Timer Interrupts:
-    => When the timer counter goes from max value (or from 0) to the preprogramed value, a timer overflow interrupt occurs.
+5. Timer Delay Generation (TMR1):
+    >>-> TMR1 is a 16bit timer / counter module, which it means that it consists of two registers TMR1L and TMR1H.
+
+    => Enable the TMR1 interrupt with TMR1IE in PIE1.
+
+    => Turn on TMR1 with TMR1ON in T1CON.
+
+    => Set the first bit of the TMR1 prescaler with T1CKPS0 in T1CON.
+
+    => Set the second bit of the TMR1 prescaler with T1CKPS1 in T1CON, resulting in a prescaler value of 1:8 (for every 8 clock cycles, the timer will increment by one count.).
+
+    => Select the internal clock source for TMR1 with TMR1CS in T1CON.
+
+    => Calculate TMR1L and TMR1H for the desired initial value:
+    --> `TMR1 Clock Tick Frequency` = _XTAL_FREQ / (4 * prescalar)
+    --> `Ticks` = `TMR1 Clock Tick Frequency` * `Desired Time Interval`
+    --> `Initial Value` = 65536 - `Ticks`
+    --> Split the `Initial Value` into High and Low Bytes
+
+    => Load TMR1L and TMR1H.

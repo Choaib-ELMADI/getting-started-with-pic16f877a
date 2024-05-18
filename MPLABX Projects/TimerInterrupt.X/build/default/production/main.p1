@@ -15,12 +15,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 "477
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 477: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS21 ~T0 @X0 0 e@11 ]
-"1255
-[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 1255: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
-"59
-[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
-[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"1624
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 1624:     struct {
+[s S68 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S68 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"1623
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 1623: typedef union {
+[u S67 `S68 1 ]
+[n S67 . . ]
+"1635
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 1635: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
+[v _PIE1bits `VS67 ~T0 @X0 0 e@140 ]
+"661
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 661:     struct {
+[s S29 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
+[n S29 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS ]
+"668
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 668:     struct {
+[s S30 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"675
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 675:     struct {
+[s S31 :2 `uc 1 :1 `uc 1 ]
+[n S31 . . T1INSYNC ]
+"660
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 660: typedef union {
+[u S28 `S29 1 `S30 1 `S31 1 ]
+[n S28 . . . . ]
+"680
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 680: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x010)));
+[v _T1CONbits `VS28 ~T0 @X0 0 e@16 ]
+"648
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 648: extern volatile unsigned char TMR1H __attribute__((address(0x00F)));
+[v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
+"641
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 641: extern volatile unsigned char TMR1L __attribute__((address(0x00E)));
+[v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
 "1443
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 1443:     struct {
 [s S62 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -45,6 +75,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _PORTCbits `VS13 ~T0 @X0 0 e@7 ]
 [t ~ __interrupt . k ]
 [t T2 __interrupt ]
+"59
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"538
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 538:     struct {
+[s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S25 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"537
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 537: typedef union {
+[u S24 `S25 1 ]
+[n S24 . . ]
+"549
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 549: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS24 ~T0 @X0 0 e@12 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -229,104 +273,136 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 5:     INTCONbits.PEIE = 1;
 [p x FOSC  =  HS ]
 "6
-[; ;main.c: 6:     INTCONbits.TMR0IE = 1;
+[; ;main.c: 6: 
 [p x WDTE  =  OFF ]
 "7
 [; ;main.c: 7: 
 [p x PWRTE  =  OFF ]
 "8
-[; ;main.c: 8:     OPTION_REG = 0x07;
+[; ;main.c: 8: 
 [p x BOREN  =  OFF ]
 "9
-[; ;main.c: 9:     TMR0 = 59;
+[; ;main.c: 9: 
 [p x LVP  =  ON ]
 "10
 [; ;main.c: 10: 
 [p x CPD  =  OFF ]
 "11
-[; ;main.c: 11:     TRISCbits.TRISC0 = 0;
+[; ;main.c: 11:     PIE1bits.TMR1IE = 1;
 [p x WRT  =  OFF ]
 "12
-[; ;main.c: 12:     PORTCbits.RC0 = 0;
+[; ;main.c: 12:     T1CONbits.TMR1ON = 1;
 [p x CP  =  OFF ]
 "14
-[; ;main.c: 14:     while (1) {
+[; ;main.c: 14:     T1CONbits.T1CKPS1 = 1;
 [v _counter `ui ~T0 @X0 1 e ]
 [i _counter
 -> -> 0 `i `ui
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "17
-[; ;main.c: 17:             counter = 0;
+[; ;main.c: 17:     TMR1L = 0x0A;
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "18
-[; ;main.c: 18:         }
+[; ;main.c: 18: 
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "19
-[; ;main.c: 19:     }
+[; ;main.c: 19:     TRISCbits.TRISC0 = 0;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"20
-[; ;main.c: 20: 
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"22
-[; ;main.c: 22: }
-[e = _OPTION_REG -> -> 7 `i `uc ]
-"23
-[; ;main.c: 23: 
-[e = _TMR0 -> -> 59 `i `uc ]
 "25
-[; ;main.c: 25:     if (INTCONbits.TMR0IF == 1) {
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 25:             counter = 0;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
 "26
-[; ;main.c: 26:         ++counter;
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 26:         }
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"27
+[; ;main.c: 27:     }
+[e = . . _T1CONbits 1 3 -> -> 1 `i `uc ]
 "28
-[; ;main.c: 28:         TMR0 = 59;
-[e :U 101 ]
-{
+[; ;main.c: 28: 
+[e = . . _T1CONbits 1 4 -> -> 1 `i `uc ]
 "29
-[; ;main.c: 29:     }
-[e $ ! == _counter -> -> 25 `i `ui 103  ]
-{
+[; ;main.c: 29:     return;
+[e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
 "30
 [; ;main.c: 30: }
-[e = . . _PORTCbits 0 0 -> ~ -> . . _PORTCbits 0 0 `i `uc ]
+[e = _TMR1H -> -> 61 `i `uc ]
 "31
+[; ;main.c: 31: 
+[e = _TMR1L -> -> 10 `i `uc ]
+"33
+[; ;main.c: 33: 
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+"34
+[; ;main.c: 34:     if (INTCONbits.TMR0IF == 1) {
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+"36
+[; ;main.c: 36:         INTCONbits.TMR0IF = 0;
+[e :U 101 ]
+{
+"37
+[; ;main.c: 37:         TMR0 = 59;
+[e $ ! == _counter -> -> 15 `i `ui 103  ]
+{
+"38
+[; ;main.c: 38:     }
+[e = . . _PORTCbits 0 0 -> ~ -> . . _PORTCbits 0 0 `i `uc ]
+"39
+[; ;main.c: 39: 
 [e = _counter -> -> 0 `i `ui ]
-"32
+"40
+[; ;main.c: 40: 
 }
 [e :U 103 ]
-"33
+"41
+[; ;main.c: 41:     if (PIR1bits.TMR1IF == 1) {
 }
 [e :U 100 ]
 [e $U 101  ]
 [e :U 102 ]
-"35
+"43
+[; ;main.c: 43:         PIR1bits.TMR1IF = 0;
 [e $UE 99  ]
-"36
+"44
+[; ;main.c: 44:         TMR1H = 0x3D;
 [e :UE 99 ]
 }
-[v $root$_timer0ISR `(v ~T0 @X0 0 e ]
-"38
-[v _timer0ISR `(v ~T2 @X0 1 ef ]
+[v $root$_timerISR `(v ~T0 @X0 0 e ]
+"46
+[; ;main.c: 46:     }
+[v _timerISR `(v ~T2 @X0 1 ef ]
 {
-[e :U _timer0ISR ]
+[e :U _timerISR ]
 [f ]
-"39
+"48
 [e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 105  ]
 {
-"40
+"49
 [e =+ _counter -> -> 1 `i `ui ]
-"41
+"50
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"42
+"51
 [e = _TMR0 -> -> 59 `i `uc ]
-"43
+"52
 }
 [e :U 105 ]
-"44
+"55
+[e $ ! == -> . . _PIR1bits 0 0 `i -> 1 `i 106  ]
+{
+"56
+[e =+ _counter -> -> 1 `i `ui ]
+"57
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"58
+[e = _TMR1H -> -> 61 `i `uc ]
+"59
+[e = _TMR1L -> -> 10 `i `uc ]
+"60
+}
+[e :U 106 ]
+"61
 [e :UE 104 ]
 }

@@ -1910,21 +1910,29 @@ extern __bank0 __bit __timeout;
 #pragma config CP = OFF
 
 unsigned int counter = 0;
-void __attribute__((picinterrupt(("")))) timer0ISR(void);
+void __attribute__((picinterrupt(("")))) timerISR(void);
 
 void main(void) {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.TMR0IE = 1;
 
-    OPTION_REG = 0x07;
-    TMR0 = 59;
+
+
+
+
+    PIE1bits.TMR1IE = 1;
+    T1CONbits.TMR1ON = 1;
+    T1CONbits.T1CKPS0 = 1;
+    T1CONbits.T1CKPS1 = 1;
+    T1CONbits.TMR1CS = 0;
+    TMR1H = 0x3D;
+    TMR1L = 0x0A;
 
     TRISCbits.TRISC0 = 0;
     PORTCbits.RC0 = 0;
 
     while (1) {
-        if (counter == 25) {
+        if (counter == 15) {
             PORTCbits.RC0 = ~PORTCbits.RC0;
             counter = 0;
         }
@@ -1933,10 +1941,19 @@ void main(void) {
     return;
 }
 
-void __attribute__((picinterrupt(("")))) timer0ISR(void) {
+void __attribute__((picinterrupt(("")))) timerISR(void) {
+
     if (INTCONbits.TMR0IF == 1) {
         ++counter;
         INTCONbits.TMR0IF = 0;
         TMR0 = 59;
+    }
+
+
+    if (PIR1bits.TMR1IF == 1) {
+        ++counter;
+        PIR1bits.TMR1IF = 0;
+        TMR1H = 0x3D;
+        TMR1L = 0x0A;
     }
 }
