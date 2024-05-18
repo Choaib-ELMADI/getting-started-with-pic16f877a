@@ -1909,13 +1909,31 @@ extern __bank0 __bit __timeout;
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-unsigned int counter = 0;
-void __attribute__((picinterrupt(("")))) timerISR(void);
+unsigned char timer0Counter = 0;
+unsigned char timer1Counter = 0;
+unsigned char timer2Counter = 0;
+
+void __attribute__((picinterrupt(("")))) timersISR(void);
 
 void main(void) {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-# 36 "main.c"
+
+
+    INTCONbits.TMR0IE = 1;
+    OPTION_REG = 0x07;
+    TMR0 = 59;
+
+
+    PIE1bits.TMR1IE = 1;
+    T1CONbits.TMR1ON = 1;
+    T1CONbits.T1CKPS0 = 1;
+    T1CONbits.T1CKPS1 = 1;
+    T1CONbits.TMR1CS = 0;
+    TMR1H = 0x3D;
+    TMR1L = 0x0A;
+
+
     PIE1bits.TMR2IE = 1;
     T2CONbits.TMR2ON = 1;
     T2CONbits.TOUTPS0 = 1;
@@ -1926,29 +1944,43 @@ void main(void) {
     PR2 = 252;
 
     TRISCbits.TRISC0 = 0;
+    TRISCbits.TRISC1 = 0;
+    TRISCbits.TRISC2 = 0;
     PORTCbits.RC0 = 0;
+    PORTCbits.RC1 = 0;
+    PORTCbits.RC2 = 0;
 
     while (1) {
-        if (counter == 25) {
+        if (timer0Counter == 100) {
             PORTCbits.RC0 = ~PORTCbits.RC0;
-            counter = 0;
+            timer0Counter = 0;
+        }
+
+        if (timer1Counter == 10) {
+            PORTCbits.RC1 = ~PORTCbits.RC1;
+            timer1Counter = 0;
+        }
+
+        if (timer2Counter == 100) {
+            PORTCbits.RC2 = ~PORTCbits.RC2;
+            timer2Counter = 0;
         }
     }
 
     return;
 }
 
-void __attribute__((picinterrupt(("")))) timerISR(void) {
+void __attribute__((picinterrupt(("")))) timersISR(void) {
 
     if (INTCONbits.TMR0IF == 1) {
-        ++counter;
+        ++timer0Counter;
         INTCONbits.TMR0IF = 0;
         TMR0 = 59;
     }
 
 
     if (PIR1bits.TMR1IF == 1) {
-        ++counter;
+        ++timer1Counter;
         PIR1bits.TMR1IF = 0;
         TMR1H = 0x3D;
         TMR1L = 0x0A;
@@ -1956,7 +1988,7 @@ void __attribute__((picinterrupt(("")))) timerISR(void) {
 
 
     if (PIR1bits.TMR2IF == 1) {
-        ++counter;
+        ++timer2Counter;
         PIR1bits.TMR2IF = 0;
         PR2 = 252;
     }
