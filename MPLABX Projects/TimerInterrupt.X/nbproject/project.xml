@@ -21,6 +21,7 @@
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>ms</word>
+            <word>Postscale</word>
             <word>prescalar</word>
         </spellchecker-wordlist>
     </configuration>

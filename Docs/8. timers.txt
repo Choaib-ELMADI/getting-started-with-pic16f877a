@@ -35,7 +35,6 @@
     => Turn on TMR1 with TMR1ON in T1CON.
 
     => Set the first bit of the TMR1 prescaler with T1CKPS0 in T1CON.
-
     => Set the second bit of the TMR1 prescaler with T1CKPS1 in T1CON, resulting in a prescaler value of 1:8 (for every 8 clock cycles, the timer will increment by one count.).
 
     => Select the internal clock source for TMR1 with TMR1CS in T1CON.
@@ -47,3 +46,25 @@
     --> Split the `Initial Value` into High and Low Bytes
 
     => Load TMR1L and TMR1H.
+
+6. Timer Delay Generation (TMR2):
+    >>-> TMR2 is a 8bit timer / counter module.
+
+    => Enable the TMR2 interrupt with TMR2IE in PIE1.
+
+    => Turn on TMR2 with TMR2ON in T2CON.
+
+    => Set the first bit of the TMR2 prescalar with T2CKPS0 in T2CON.
+    => Set the second bit of the TMR2 prescalar with T2CKPS1 in T2CON.
+
+    => Set the first bit of the TMR2 postscalar with TOUTPS0 in T2CON.
+    => Set the second bit of the TMR2 postscalar with TOUTPS1 in T2CON.
+    => Set the third bit of the TMR2 postscalar with TOUTPS2 in T2CON.
+    => Set the fourth bit of the TMR2 postscalar with TOUTPS3 in T2CON.
+
+    => Calculate PR2 for the desired initial value:
+    --> `TMR2 Clock Tick Frequency` = _XTAL_FREQ / (4 * prescalar * postscalar)
+    --> `Ticks` = `TMR2 Clock Tick Frequency` * `Desired Time Interval`
+    --> `PR2` = 256 - `Ticks`
+
+    => Load PR2 value.

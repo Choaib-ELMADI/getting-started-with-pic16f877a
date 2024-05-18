@@ -1915,24 +1915,21 @@ void __attribute__((picinterrupt(("")))) timerISR(void);
 void main(void) {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-
-
-
-
-
-    PIE1bits.TMR1IE = 1;
-    T1CONbits.TMR1ON = 1;
-    T1CONbits.T1CKPS0 = 1;
-    T1CONbits.T1CKPS1 = 1;
-    T1CONbits.TMR1CS = 0;
-    TMR1H = 0x3D;
-    TMR1L = 0x0A;
+# 36 "main.c"
+    PIE1bits.TMR2IE = 1;
+    T2CONbits.TMR2ON = 1;
+    T2CONbits.TOUTPS0 = 1;
+    T2CONbits.TOUTPS1 = 1;
+    T2CONbits.TOUTPS2 = 1;
+    T2CONbits.TOUTPS3 = 1;
+    T2CONbits.T2CKPS1 = 1;
+    PR2 = 252;
 
     TRISCbits.TRISC0 = 0;
     PORTCbits.RC0 = 0;
 
     while (1) {
-        if (counter == 15) {
+        if (counter == 25) {
             PORTCbits.RC0 = ~PORTCbits.RC0;
             counter = 0;
         }
@@ -1955,5 +1952,12 @@ void __attribute__((picinterrupt(("")))) timerISR(void) {
         PIR1bits.TMR1IF = 0;
         TMR1H = 0x3D;
         TMR1L = 0x0A;
+    }
+
+
+    if (PIR1bits.TMR2IF == 1) {
+        ++counter;
+        PIR1bits.TMR2IF = 0;
+        PR2 = 252;
     }
 }
