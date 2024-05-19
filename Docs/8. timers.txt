@@ -17,6 +17,8 @@
 4. Timer Delay Generation (TMR0):
     >>-> TMR0 is a 8bit timer / counter module.
 
+    => Enable the TMR0 interrupt with TMR0IE in INTCON.
+
     => Set the timer prescalar in OPTION_REG:
     --> Just a number that divides the timer clock frequency of the uC, which reduces the speed of the timer counter.
     --> PIC16F877A has a fixed prescalar of 4, and a user defined prescalar.
