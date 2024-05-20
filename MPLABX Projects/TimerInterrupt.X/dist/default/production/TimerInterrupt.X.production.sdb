@@ -3,11 +3,11 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\pic\__eeprom.c
+"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]

@@ -15,7 +15,7 @@ unsigned char timer0Counter = 0;
 unsigned char timer1Counter = 0;
 unsigned char timer2Counter = 0;
 
-void __interrupt() timersISR(void);
+void interrupt timersISR(void);
 
 void main(void) {
     INTCONbits.GIE = 1;         // Global Interrupt Enable Bit
@@ -72,7 +72,7 @@ void main(void) {
     return;
 }
 
-void __interrupt() timersISR(void) {
+void interrupt timersISR(void) {
     /*   TIMER 0   */
     if (INTCONbits.TMR0IF == 1) {
         ++timer0Counter;
