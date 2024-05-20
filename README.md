@@ -39,7 +39,7 @@ When using MPLAB X IDE, the syntax for defining an interrupt service routine (IS
 
 For C99, the interrupt function is written as follows:
 
-```c
+```cpp
 void __interrupt() interruptFunctionName(void);
 ```
 
@@ -47,7 +47,7 @@ void __interrupt() interruptFunctionName(void);
 
 For C90, the interrupt function is written as follows:
 
-```c
+```cpp
 void interrupt interruptFunctionName(void);
 ```
 
