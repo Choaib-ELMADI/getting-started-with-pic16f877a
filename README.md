@@ -31,4 +31,24 @@ If you have only the PIC16F877A microcontroller and a programmer:
 
 ![Only PIC with Programmer](./Docs/0.2%20upload-code__microcontroller.png)
 
+## Interrupt Service Routine Function Prototype
+
+When using MPLAB X IDE, the syntax for defining an interrupt service routine (ISR) depends on whether you are using C99 or C90 standards.
+
+### Using C99
+
+For C99, the interrupt function is written as follows:
+
+```c
+void __interrupt() interruptFunctionName(void);
+```
+
+### Using C90
+
+For C90, the interrupt function is written as follows:
+
+```c
+void interrupt interruptFunctionName(void);
+```
+
 ## Feel free to explore each folder to access the resources and projects provided.
