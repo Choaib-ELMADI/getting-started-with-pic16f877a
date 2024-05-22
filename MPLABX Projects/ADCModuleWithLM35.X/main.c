@@ -12,6 +12,13 @@
 #pragma config CP = OFF
 
 void main(void) {
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.ADIE = 1;
+    
+    TRISC = 0x00;
+    TRISD = 0x00;
+    
     ADCON0 = 0x41;
     ADCON1 = 0x8E;
     
