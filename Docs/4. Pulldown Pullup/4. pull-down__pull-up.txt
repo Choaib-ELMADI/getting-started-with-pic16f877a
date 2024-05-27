@@ -1,5 +1,0 @@
-1. Pull Down:
-    ==> Pull Down is an input devices working logic.
-    
-2. Pull Up:
-    ==> Pull Up is an input devices working logic.

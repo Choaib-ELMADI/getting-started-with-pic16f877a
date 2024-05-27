@@ -1,2 +1,0 @@
-1. Relays:
-    => Relays are electro-magnetic switches, used to control high power devices from low power signals.

@@ -1,9 +1,0 @@
-1. Interrupts in uC:
-    => Interrupts are just actions that interrupt the execution of the main program, to execute some lines of code in the Interrupt Service Routine (ISR).
-    => There are 2 types of interrupts:
-        * Software Interrupt: provided from internal sources of the uC, example: ADC INTERRUPT, TIMER INTERRUPT, USART INTERRUPT...
-        * Hardware Interrupt: provided from external sources to the uC, example: EXTERNAL INTERRUPT...
-    => In PIC16F877A, RB0 is the external interrupt pin.
-
-2. Why Interrupts?
-    => Saves time to the microcontroller.
