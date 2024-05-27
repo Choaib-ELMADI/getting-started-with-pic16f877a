@@ -23,13 +23,13 @@ Projects in the **"MPLAB Projects"**, **"MPLABX Projects"**, and **"Proteus 8"**
 
 If you have a development board and a programmer:
 
-![With Development Board and Programmer](./Docs/0.1%20upload-code__dev-board.png)
+![With Development Board and Programmer](./Docs/0.%20Upload%20Code/0.1%20upload-code__dev-board.png)
 
 ### Case 2: Only PIC with Programmer
 
 If you have only the PIC16F877A microcontroller and a programmer:
 
-![Only PIC with Programmer](./Docs/0.2%20upload-code__microcontroller.png)
+![Only PIC with Programmer](./Docs/0.%20Upload%20Code/0.2%20upload-code__microcontroller.png)
 
 ## Interrupt Service Routine Function Prototype
 
