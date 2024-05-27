@@ -1,0 +1,11 @@
+1. TRISx:
+    => TRISx registers are 8 bits registers used to configure the 5 ports of PIC16F877A (Input -> 1 / Output -> 0).
+    => There are 5 TRISx registers:
+        > TRISA: configures PORTA pins: TRISA0 -> TRISA5
+        > TRISB: configures PORTB pins: TRISA0 -> TRISB7
+        > TRISC: configures PORTC pins: TRISA0 -> TRISC7
+        > TRISD: configures PORTD pins: TRISA0 -> TRISD7
+        > TRISE: configures PORTE pins: TRISE0 -> TRISE2
+
+2. PORTx:
+    => PORTx are used to write HIGH - LOW to the pins, or read the status of a pin.

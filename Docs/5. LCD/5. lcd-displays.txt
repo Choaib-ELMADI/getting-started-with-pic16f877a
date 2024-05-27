@@ -1,0 +1,119 @@
+1. LCD Display:
+    => LCD stands for Liquid Crystal Display.
+
+2. 16X2 LCD Display:
+    => This type of LCD display contains 16 columns and 2 rows.
+    => It contains 32 display elements.
+    => Each display element consists of a 5X8 dot matrix display.
+    => Each LCD display comes with a controller to help in the display of different characters. The most used one is HD44780.
+    => The HD44780 controller has two registers:
+        * Instruction Register: pass the address at which we want to print.
+        * Data Register: pass the data we are going to print.
+    => Address of display elements in LCD starts from 0x80 --> 0x8F then 0xC0 --> 0xCF.
+    => Pinouts of LCD:
+        * VSS (Ground)
+        * VDD (5V)
+        * VE  (Contrast of display)
+        * RS  (Register Select, 0 ==> IR | 1 ==> DR)
+        * RW  (Read/Write, 0 ==> write to LCD | 1 ==> read from LCD)
+        * E   (Enable)
+        * D0 --
+        * D1   |
+        * D2   |
+        * D3   | --> (Data Lines)
+        * D4   |
+        * D5   |
+        * D6   |
+        * D7 --
+        * Backlight Anode
+        * Backlight Cathode
+
+3. 16X2 LCD Display (8bit mode):
+    => Consider this:
+        void lcd_data(unsigned char data) {
+            EN = 1;     // Enabled
+            RS = 1;     // Data Register
+            RW = 0;     // Write
+            PORTD = data;
+            __delay_ms(5);
+            EN = 0;     // Disabled
+        }
+
+        void lcd_command(unsigned char cmd) {
+            EN = 1;     // Enabled
+            RS = 0;     // Instruction Register
+            RW = 0;     // Write
+            PORTD = cmd;
+            __delay_ms(5);
+            EN = 0;     // Disabled
+        }
+    
+    => Example:
+        lcd_data("a");
+        "a" in hexadecimal is 0x61 and in binary is 0b01100001
+                        _________________________________
+        Actual DATA =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 1 |
+                        ---------------------------------
+
+                        D7   D6   D5  D4  D3  D2  D1  D0
+                        _________________________________
+        DATA Lines  =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 1 |
+                        ---------------------------------
+
+4. 16X2 LCD Display (4bit mode):
+    => Consider this:
+        void lcd_data(unsigned char data) {
+            EN = 1;     // Enabled
+            RS = 1;     // Data Register
+            RW = 0;     // Write
+            PORTD = (data & 0xF0);
+            __delay_ms(2);
+            EN = 0;     // Disabled
+            PORTD = ((data << 4) & 0xF0);
+            EN = 1;
+            RS = 1;
+            RW = 0;
+            __delay_ms(2);
+            EN = 0;
+        }
+
+        void lcd_command(unsigned char cmd) {
+            EN = 1;     // Enabled
+            RS = 0;     // Instruction Register
+            RW = 0;     // Write
+            PORTD = (cmd & 0xF0);
+            __delay_ms(2);
+            EN = 0;     // Disabled
+            PORTD = ((cmd << 4) & 0xF0);
+            EN = 1;
+            RS = 0;
+            RW = 0;
+            __delay_ms(2);
+            EN = 0;
+        }
+
+    => In 4bit mode, only the 4 MSB are in use.
+    
+    => Example:
+        lcd_data("a");
+        "a" in hexadecimal is 0x61 and in binary is 0b01100001
+                        _________________________________
+        Actual DATA =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 1 |
+                        ---------------------------------
+
+                        _________________________________
+        0xF0        =>  | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+                        ---------------------------------
+
+                        _________________________________
+        DATA & 0xF0 =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+                        ---------------------------------
+
+                        D7   D6   D5  D4  D3  D2  D1  D0
+                        _________________________________
+        DATA Lines  =>  | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+                        ---------------------------------
+
+                        _________________________________
+        (DATA << 4) =>  | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
+                        ---------------------------------

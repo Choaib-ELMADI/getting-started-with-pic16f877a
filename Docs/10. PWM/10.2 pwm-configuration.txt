@@ -1,0 +1,18 @@
+1. PWM Register Configuration:
+    >>-> The PIC16F877A has two channels to generate PWM signals RC2\CCP1 and RC1\CCP2.
+    >>-> TMR2 is frequently preferred to generate the PWM wave.
+
+    => Turn on the TMR2 in T2CON.
+
+    => Set the TMR2 prescalar in T2CON.
+
+    => Set the PWM mode with CCPxM3 -> CCPxM0 in CCP1CON.
+
+    => Set the PWM frequency in PR2:
+    --> `PWM Period` = (PR2 + 1) * `Machine Cycle` * `TMR2 Prescalar Value`
+    --> `Machine Cycle` = 4 / 20MHz = 200ns
+    --> `PWM Period` = 1 / `PWM Frequency`
+
+    => Set the 10bit duty cycle value in CCP1CON and CCPR1L.
+    --> The CCPR1L contains the 8 most significant bits.
+    --> The CCP1CON contains the 2 least significant bits.
