@@ -14,3 +14,5 @@
     --> `PWM Period` = 1 / `PWM Frequency`
 
     => Set the 10bit duty cycle value in CCP1CON and CCPR1L.
+    --> The CCPR1L contains the 8 most significant bits.
+    --> The CCP1CON contains the 2 least significant bits.
