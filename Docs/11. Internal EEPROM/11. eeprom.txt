@@ -1,0 +1,4 @@
+1. Internal EEPROM:
+    => EEPROM means: Electrically Erasable Programmable Read-Only Memory.
+    => The PIC16F877A microcontroller has an internal EEPROM of 256 bytes.
+    => This non-volatile memory can be used to store data that must be preserved even when the microcontroller is powered down.
