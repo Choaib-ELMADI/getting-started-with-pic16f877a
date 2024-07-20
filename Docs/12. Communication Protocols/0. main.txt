@@ -58,3 +58,19 @@
                     PIR1bits.RCIF = 0;
                 }
             }
+
+3. SPI:
+    => SPI === Serial Peripheral Interface:
+        * The SPI bus allows communication between one master device and one or more slave devices
+        * Four IOs are dedicated to the SPI communication protocol:
+            - SCK: Serial Clock, from master to slaves
+            - MOSI: Master Out Slave In, used to transmit data in master mode and receive data in slave mode
+            - MISO: Master In Slave Out, used to transmit data in slave mode and receive data in master mode
+            - SS: Slave Select, a master's GPIO to select a slave to communicate with
+
+    => SPI Configuration for PIC16F877A:
+        * SSPEN in SSPCON1: Synchronous Serial Port Enable Bit
+        * CKP in SSPCON1: Clock Polarity Select Bit
+        * SSPM3->SSPM0 in SSPCON1: Synchronous Serial Port Mode Select Bits
+
+        * CKE in SSPSTAT: SPI Clock Select Bit
