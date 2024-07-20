@@ -1,0 +1,60 @@
+1. Communication Types:
+    => Communication in devices like microcontrollers is of two types:
+        * Parallel Communication (check images)
+        * Serial Communication (check images)
+
+    => Based on clock, there is:
+        * Synchronous Communication
+        * Asynchronous Communication (no clock)
+
+2. UART:
+    => UART === Universal Asynchronous Receiver Transmitter:
+        * It's of type Serial Asynchronous
+        * Because it's an asynchronous communication, we need some common configuration between transmitter and receiver:
+            - Transmission Speed: refered to as "Baud Rate", 9600 is a common baud rate ==> 9600 bits per second
+            - Data Length: both should have the same data length, 8 or 16 bits
+            - Start and Stop bits:
+                + Start bit ==> High to low pulse
+                + Stop bit  ==> Low to high pulse*
+
+    => UART Register Configuration for PIC16F877A:
+        * Configure TXSTA and RCSTA:
+            - TXSTA: Transmit Status and Control Register:
+                + TXEN: Transmit Enable Bit
+                + BRGH: High Baud Rate Select Bit
+            - RCSTA: Receive Status and Control Register:
+                + SPEN: Serial Port Enable Bit
+                + CREN: Continuous Receive Enable Bit
+
+        * Set baud rate at SPBRG:
+            * For BRGH = 0: `baud rate` = `Fosc` / (64 * (SPBRG + 1))
+            * For BRGH = 1: `baud rate` = `Fosc` / (16 * (SPBRG + 1))
+
+        * Write functions for receiving and transmitting data:
+            * RCIF in PIR1 Register: USART Receive Interrupt Flag Bit
+            * TXIF in PIR1 Register: USART Transmit Interrupt Flag Bit
+
+            // Transmit one data byte
+            void tx(unsigned char data) {
+                if (PIR1bits.TXIF == 1) {   // Check if the transmit buffer is empty
+                    TXREG = data;           // Load data to the transmit buffer
+                    PIR1bits.TXIF = 0;
+                }
+            }
+
+            // Transmit a string data
+            void string_tx(const unsigned char *str, unsigned char len) {
+                unsigned char i;
+                for (i=0; i<len; ++i) {
+                    tx(str[i]);
+                    __delay_ms(200);
+                }
+            }
+
+            // Receive using interrupt
+            void interrupt receive() {
+                if (PIR1bits.RCIF == 1) {   // Check if receive buffer is full
+                    y = RCREG;              // Read data from receive buffer
+                    PIR1bits.RCIF = 0;
+                }
+            }
