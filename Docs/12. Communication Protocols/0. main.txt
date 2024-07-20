@@ -74,3 +74,19 @@
         * SSPM3->SSPM0 in SSPCON1: Synchronous Serial Port Mode Select Bits
 
         * CKE in SSPSTAT: SPI Clock Select Bit
+        * SMP in SSPSTAT: Sample Bit
+
+4. I2C:
+    => I2C === Inter Integrated Circuit:
+        * In I2C protocol, the master talks to the slave devices by its address as we have common data and clock lines
+        * SDA and SCL lines:
+            - Both of them are bidirectional and are connected to the positive supply voltage via pullup resistors
+
+    => I2C Working Principle:
+        Start Bit     -           Address Byte           - Acknowledgement Bit -        Data Byte   - Acknowledgement Bit - Stop Bit
+            .----.----------------------------------------.-----.---------------------------------------.-----.-----.
+            | St | A6 | A5 | A4 | A3 | A2 | A1 | A0 | R\W | ACK | D7 | D6 | D5 | D4 | D3 | D2 | D1 | D0 | ACK | Stp |
+            .____.________________________________________._____._______________________________________._____._____.
+
+        if R\W == 1: the master is requesting for data read
+        if R\W == 0: the master is requesting for data write
