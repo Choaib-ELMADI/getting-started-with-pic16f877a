@@ -2,7 +2,7 @@
 
 # Getting Started with PIC16F877A
 
-Welcome to the **Getting Started with PIC16F877A** repository! This repository is designed to help you learn about the PIC16F877A microcontroller through a variety of resources and projects.
+Welcome to the `getting-started-with-pic16f877a` repository! This repository is designed to help you learn about the PIC16F877A microcontroller through a variety of resources and projects.
 
 ## Repository Structure
 
@@ -50,5 +50,3 @@ For C90, the interrupt function is written as follows:
 ```cpp
 void interrupt interruptFunctionName(void);
 ```
-
-## Feel free to explore each folder to access the resources and projects provided.
