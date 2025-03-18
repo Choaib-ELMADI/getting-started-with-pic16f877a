@@ -1,0 +1,253 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"41 C:\Users\Choaib ELMADI\Documents\D.I.F.Y\3. C - CPP Programming\3. PIC16F877A\MPLABX Projects\DS1307_RTC_I2C.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"83
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+"89
+[v _lcd_data lcd_data `(v  1 e 1 0 ]
+"97
+[v _lcd_word lcd_word `(v  1 e 1 0 ]
+"103
+[v _lcd_command lcd_command `(v  1 e 1 0 ]
+"112
+[v _decimal_to_bcd decimal_to_bcd `(uc  1 e 1 0 ]
+"119
+[v _bcd_to_ascii bcd_to_ascii `(v  1 e 1 0 ]
+"133
+[v _DS1307_write DS1307_write `(v  1 e 1 0 ]
+"196
+[v _DS1307_read DS1307_read `(v  1 e 1 0 ]
+"216 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S77 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233
+[u S86 . 1 `S77 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES86  1 e 1 @6 ]
+"340
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S119 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"549
+[u S128 . 1 `S119 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES128  1 e 1 @12 ]
+"808
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"815
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"1375
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S98 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"1771
+[u S107 . 1 `S98 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES107  1 e 1 @145 ]
+"1823
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+[s S141 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"1884
+[s S150 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S155 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S161 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S166 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S171 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S176 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S181 . 1 `S141 1 . 1 0 `S150 1 . 1 0 `S155 1 . 1 0 `S161 1 . 1 0 `S166 1 . 1 0 `S171 1 . 1 0 `S176 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES181  1 e 1 @148 ]
+"28 C:\Users\Choaib ELMADI\Documents\D.I.F.Y\3. C - CPP Programming\3. PIC16F877A\MPLABX Projects\DS1307_RTC_I2C.X\main.c
+[v __sec _sec `uc  1 e 1 0 ]
+[v __min _min `uc  1 e 1 0 ]
+[v __hour _hour `uc  1 e 1 0 ]
+[v __day _day `uc  1 e 1 0 ]
+[v __date _date `uc  1 e 1 0 ]
+[v __month _month `uc  1 e 1 0 ]
+[v __year _year `uc  1 e 1 0 ]
+[v __conf _conf `uc  1 e 1 0 ]
+"41
+[v _main main `(v  1 e 1 0 ]
+{
+"81
+} 0
+"97
+[v _lcd_word lcd_word `(v  1 e 1 0 ]
+{
+[v lcd_word@str str `*.24DCuc  1 a 1 wreg ]
+"98
+[v lcd_word@i i `uc  1 a 1 5 ]
+"97
+[v lcd_word@str str `*.24DCuc  1 a 1 wreg ]
+[v lcd_word@len len `uc  1 p 1 3 ]
+"99
+[v lcd_word@str str `*.24DCuc  1 a 1 4 ]
+"102
+} 0
+"83
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+{
+"88
+} 0
+"103
+[v _lcd_command lcd_command `(v  1 e 1 0 ]
+{
+[v lcd_command@cmd cmd `uc  1 a 1 wreg ]
+[v lcd_command@cmd cmd `uc  1 a 1 wreg ]
+[v lcd_command@cmd cmd `uc  1 a 1 2 ]
+"110
+} 0
+"119
+[v _bcd_to_ascii bcd_to_ascii `(v  1 e 1 0 ]
+{
+[v bcd_to_ascii@bcd bcd `uc  1 a 1 wreg ]
+"120
+[v bcd_to_ascii@value value `uc  1 a 1 5 ]
+"119
+[v bcd_to_ascii@bcd bcd `uc  1 a 1 wreg ]
+"122
+[v bcd_to_ascii@bcd bcd `uc  1 a 1 4 ]
+"131
+} 0
+"89
+[v _lcd_data lcd_data `(v  1 e 1 0 ]
+{
+[v lcd_data@data data `uc  1 a 1 wreg ]
+[v lcd_data@data data `uc  1 a 1 wreg ]
+[v lcd_data@data data `uc  1 a 1 2 ]
+"96
+} 0
+"133
+[v _DS1307_write DS1307_write `(v  1 e 1 0 ]
+{
+[v DS1307_write@_sec _sec `uc  1 a 1 wreg ]
+[v DS1307_write@_sec _sec `uc  1 a 1 wreg ]
+[v DS1307_write@_min _min `uc  1 p 1 0 ]
+[v DS1307_write@_hour _hour `uc  1 p 1 1 ]
+[v DS1307_write@_day _day `uc  1 p 1 2 ]
+[v DS1307_write@_date _date `uc  1 p 1 3 ]
+[v DS1307_write@_month _month `uc  1 p 1 4 ]
+[v DS1307_write@_year _year `uc  1 p 1 5 ]
+"135
+[v DS1307_write@_sec _sec `uc  1 a 1 6 ]
+"195
+} 0
+"112
+[v _decimal_to_bcd decimal_to_bcd `(uc  1 e 1 0 ]
+{
+[v decimal_to_bcd@decimal decimal `uc  1 a 1 wreg ]
+"113
+[v decimal_to_bcd@hex hex `uc  1 a 1 12 ]
+[v decimal_to_bcd@lsb lsb `uc  1 a 1 11 ]
+[v decimal_to_bcd@msb msb `uc  1 a 1 10 ]
+"112
+[v decimal_to_bcd@decimal decimal `uc  1 a 1 wreg ]
+"114
+[v decimal_to_bcd@decimal decimal `uc  1 a 1 13 ]
+"118
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"196 C:\Users\Choaib ELMADI\Documents\D.I.F.Y\3. C - CPP Programming\3. PIC16F877A\MPLABX Projects\DS1307_RTC_I2C.X\main.c
+[v _DS1307_read DS1307_read `(v  1 e 1 0 ]
+{
+[v DS1307_read@slave_address slave_address `uc  1 a 1 wreg ]
+[v DS1307_read@slave_address slave_address `uc  1 a 1 wreg ]
+[v DS1307_read@register_address register_address `uc  1 p 1 0 ]
+"198
+[v DS1307_read@slave_address slave_address `uc  1 a 1 1 ]
+"303
+} 0
