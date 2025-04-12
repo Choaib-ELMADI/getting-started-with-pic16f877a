@@ -1,4 +1,4 @@
-[![Choaib ELMADI - PIC16F877A](https://img.shields.io/badge/Choaib_ELMADI-PIC16F877A-8800dd)](https://elmadichoaib.vercel.app) ![Status - Building](https://img.shields.io/badge/Status-Building-2bd729) [![Credit - SM training academy](https://img.shields.io/badge/Credit-SM_training_academy-3b8af2)](https://www.youtube.com/@SMtrainingacademy)
+[![Choaib ELMADI - Microcontrollers](https://img.shields.io/badge/Choaib_ELMADI-PIC16F877A-8800dd)](https://elmadichoaib.vercel.app) ![Status - Building](https://img.shields.io/badge/Status-Building-2bd729) ![Platform - PIC16F877A](https://img.shields.io/badge/Platform-PIC16F877A-f7d620) [![Credit - SM training academy](https://img.shields.io/badge/Credit-SM_training_academy-3b8af2)](https://www.youtube.com/@SMtrainingacademy)
 
 # Getting Started with PIC16F877A
 
